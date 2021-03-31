@@ -11,10 +11,11 @@
       integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6"
       crossorigin="anonymous"
     />
+    <link rel="stylesheet" href="assets/CSS/style.css"/>
     <title>Space Dashboard</title>
   </head>
   <body>
-    <div class="jumbotron jumbotron-fluid">
+    <div class="jumbotron jumbotron-fluid jumbotron-custom">
       <div class="container">
         <h1 class="display-4">Weather Dash</h1>
         <p class="lead">
@@ -27,46 +28,27 @@
       <!-- card container -->
       <section id="weather-container" class="col-8">
         <!-- inner container 1 -->
-        <div class = "card-group m-5">
+        <div class = "card-group m-3">
           <!-- Mars Weather -->
-          <div class="card text-white bg-dark" style="margin-right: 3px;">
-            <div class="card-header">Mars Weather</div>
+          <div class="card text-white bg-dark" style="margin-right: 10px; margin-bottom: 10px;">
+            <h3 class="card-header">Mars Weather</h3>
             <div id="mars-card-text"class="card-body">
-              <p class="card-text">
-                Some quick example text to build on the card title and make up the
-                bulk of the card's content.
-              </p>
             </div>
           </div>
           <!-- earth natural events -->
-          <div class="card text-white bg-dark">
-            <div class="card-header">Earth Natural Events</div>
+          <div class="card text-white bg-dark" style="margin-bottom: 10px; margin-left: 5px">
+            <h3 class="card-header">Earth Natural Events</h3>
             <div class="card-body">
-              <h5 class="card-title">Dark card title</h5>
-              <p class="card-text">
-                Some quick example text to build on the card title and make up the
-                bulk of the card's content.
-              </p>
             </div>
-          </div>
+          </div> 
+
           <!-- inner container 2 -->
         <div id="second-container" class="m-0">
-          <!-- mars photo  -->
-          <!-- <div class="card text-white bg-dark w-100 h-50" id="mars-photo">
-            <img src="./assets/images/PIA23764-RoverNamePlateonMars-web.jpg" class="card-img-top img-fluid" alt="..." />
-            <div class="card-body">
-              <h5 class="card-title">Mars Photo</h5>
-              <p class="card-text">
-                This is a wider card with supporting text below as a natural lead-in
-                to additional content. This content is a little bit longer.
-              </p>
-            </div>
-          </div> -->
           <div class="card text-white bg-dark w-100 p-3" id="mars-photo">
-            <div class="row">
-              <h5 class="card-title row">Mars Photo</h5>
+            <div class="row" style="margin: 6px">
+              <h3 class="card-title row">Mars Photo</h3>
               <div class="row">
-                <img src="./assets/images/PIA23764-RoverNamePlateonMars-web.jpg" class="card-img-top img-fluid p-0" alt="..." />
+                <img src="./assets/images/PIA23764-RoverNamePlateonMars-web.jpg" class="card-img-top img-fluid p-0" alt="..." style="margin-bottom: 10px;"/>
               </div>
               <p class="card-text row">
                 This is a wider card with supporting text below as a natural lead-in
@@ -75,10 +57,11 @@
             </div>
           </div>
         </div>
+
         <!-- inner container 3 -->
         <div id="third-container">
           <!-- launch info -->
-          <div class="card text-white bg-dark mb-3" id="launch-info">
+          <div class="card text-white bg-dark mb-3" id="launch-info" style="margin-top: 10px">
             <div class="card-header">Launch Info</div>
             <div class="card-body">
               <h5 class="card-title">Launch Info</h5>
@@ -92,21 +75,9 @@
       </section>
       
       <!-- notepad -->
-      <section id="notepad-container">
-        <div id="notepad" class="list-group col-sm-4">
-          <a class="list-group-item list-group-item-action" href="#list-item-1"
-            >Item 1</a
-          >
-        </div>
-        <div
-          data-spy="scroll"
-          data-target="#list-example"
-          data-offset="0"
-          class="scrollspy-example"
-        >
-          <h4 id="list-item-1">Item 1</h4>
-          <textarea name="" id="" cols="30" rows="1"></textarea>
-        </div>
+      <section id="notepad-container" style="margin-top: 16px; width: 100%; margin-right: 10px">
+        <h3 id="notes-header" style="padding: 10px">Notes</h3>
+        <textarea style="width: 100%; margin-right: 10px">Hello</textarea>
       </section>
     </main>
     <script

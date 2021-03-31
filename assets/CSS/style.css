@@ -1,0 +1,12 @@
+.jumbotron-custom {
+    background-color: navy;
+    color: rgb(168, 164, 164);
+    padding: 20px;
+    text-align: center;
+    margin: 10px;
+}
+
+#notes-header {
+    background-color: navy;
+    color: white
+}
