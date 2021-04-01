@@ -14,17 +14,23 @@ requestUrl = "https://api.nasa.gov/insight_weather/?api_key=EgPBPuCRfLxgIGWykQFE
 
 marsCardIntro = $("<p>")
 marsCardIntro.text("This data was collected from Elysium Planetia, a flatt smooth plain near Mars' equator. The 'sol' number represents one solar day out of a Martian year. This data is not representative of all weather on Mars.")
+marsCardIntro.addClass("mars-intro")
+
+marsCardImage = $("<img>")
+marsCardImage.attr("src", "https://live.staticflickr.com/4676/39442533234_de41d49a60_b.jpg")
+marsCardImage.addClass("mars-image")
+
+marsCardText.append(marsCardIntro)
+marsCardText.append(marsCardImage)
 
 function getApi(requestUrl) {
     fetch(requestUrl)
         .then(function (response) {
-            console.log(response)
             return response.json() })
 
             .then(function (data) {
-                console.log("MARS DATA:",data)
                 currentSol = data.sol_keys[2]
-                marsCurrentSolEl.text("Sol: "+currentSol)
+                marsCurrentSolEl.text("Sol "+currentSol)
 
                 var seasonArray = data[currentSol]
                 var currentSeason= seasonArray.Season
@@ -38,7 +44,6 @@ function getApi(requestUrl) {
                 // CHECKING FOR DATA--NEED TO DO THIS FOR PRESSURE AS WELL
 
                 if (dataArray.PRE) {
-                    console.log("hi")
                     avAtmosphericPressure= dataArray.PRE.av
                 }
                 
