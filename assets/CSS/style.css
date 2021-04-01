@@ -18,7 +18,8 @@
 .rover-info {
     position: relative;
     right: 300px;
-    
+}
+
 .temp-text-small {
     font-size: 11px;
     color: red

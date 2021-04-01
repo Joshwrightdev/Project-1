@@ -1,5 +1,6 @@
 // DOM VARIABLES
 marsCardText = $("#mars-card-text")
+marsCurrentSolEl = $("#current-sol")
 // FETCHING MARS WEATHER DATA
 
 apiKey = "EgPBPuCRfLxgIGWykQFEfYbnf48yDhmbDXqAuMAW"
@@ -14,18 +15,18 @@ function getApi(requestUrl) {
             return response.json() })
 
             .then(function (data) {
-                var seasonArray = data[828]
+                var seasonArray = data[data.sol_keys[0]]
                 var currentSeason= seasonArray.Season
 
                 var seasonEl = $("<p>")
                 seasonEl.text("Current Season: "+currentSeason)
                 marsCardText.append(seasonEl)
 
-                array832 = data[832]
+                array832 = data[data.sol_keys[0]]
                 avAtmosphericPressure= array832.PRE.av
 
                 var pressureEl = $("<p>")
-                pressureEl.text("Atmospheric Pressure at Mars Sol 832: "+ avAtmosphericPressure)
+                pressureEl.text("Atmospheric Pressure on Sol " + data.sol_keys[0] + ": "+avAtmosphericPressure)
                 marsCardText.append(pressureEl)
 
                 var tempEl = $("<p>")
@@ -36,5 +37,7 @@ function getApi(requestUrl) {
             })
                       
 }
+
+marsCurrentSolEl.text("")
 
 getApi(requestUrl)
