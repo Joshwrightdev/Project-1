@@ -30,3 +30,12 @@
 .rover-info li {
     padding: 20px;
 }
+
+.mars-intro {
+    font-size: 12px
+}
+
+.mars-image {
+    width: 100%;
+    margin-bottom: 20px
+}
