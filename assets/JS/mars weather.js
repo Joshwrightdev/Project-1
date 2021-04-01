@@ -14,30 +14,27 @@ function getApi(requestUrl) {
             return response.json() })
 
             .then(function (data) {
-                console.log(data)
                 var seasonArray = data[828]
                 var currentSeason= seasonArray.Season
 
                 var seasonEl = $("<p>")
                 seasonEl.text("Current Season: "+currentSeason)
-                console.log(currentSeason)
                 marsCardText.append(seasonEl)
 
-                console.log(data[832])
                 array832 = data[832]
-                console.log(array832.PRE.av)
                 avAtmosphericPressure= array832.PRE.av
 
                 var pressureEl = $("<p>")
-                pressureEl.text("Atmospheric Pressure: "+ avAtmosphericPressure)
+                pressureEl.text("Atmospheric Pressure at Mars Sol 832: "+ avAtmosphericPressure)
                 marsCardText.append(pressureEl)
 
+                var tempEl = $("<p>")
+                tempEl.addClass("temp-text-small")
+                tempEl.text("NASA has temporarily suspended temperature data on Mars at this time.")
+                marsCardText.append(tempEl)
+
             })
-            
-
-
-
-            
+                      
 }
 
 getApi(requestUrl)
