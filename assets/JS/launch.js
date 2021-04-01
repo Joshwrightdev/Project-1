@@ -22,8 +22,8 @@ function getFlightInfo() {
       flightName.textContent = data.results[0].name;
       flightDate.textContent = new Date(data.results[0].net).toLocaleString();
       flightImage.setAttribute("src", data.results[4].image);
-      flightMap.setAttribute("src", data.results[0].pad.map_image);
-      flightCaption.textContent = data.results[0].pad.location.name;
+      flightMap.setAttribute("src", data.results[2].pad.map_image);
+      flightCaption.textContent = data.results[4].pad.location.name;
       //manipulate the dom
     });
 }
