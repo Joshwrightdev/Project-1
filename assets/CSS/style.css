@@ -10,3 +10,19 @@
     background-color: navy;
     color: white
 }
+
+
+
+
+
+
+
+.rover-img {
+    width: 50%;
+    height: auto;
+}
+.rover-info {
+    position: relative;
+    right: 300px;
+    
+}
