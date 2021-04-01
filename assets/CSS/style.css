@@ -12,15 +12,21 @@
 }
 
 .rover-img {
-    width: 50%;
+    width: 80%;
     height: auto;
+    position: relative;
 }
+
 .rover-info {
     position: relative;
-    right: 300px;
+    width: 300px;
 }
 
 .temp-text-small {
     font-size: 11px;
     color: red
+}
+
+.rover-info li {
+    padding: 20px;
 }
