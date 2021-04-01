@@ -39,3 +39,7 @@
     width: 100%;
     margin-bottom: 20px
 }
+
+#saved-notes {
+    border: black;
+}

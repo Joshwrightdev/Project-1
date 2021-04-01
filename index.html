@@ -106,8 +106,13 @@
         id="notepad-container"
         style="margin-top: 16px; width: 100%; margin-right: 10px"
       >
-        <h3 id="notes-header" style="padding: 10px">Notes</h3>
-        <textarea style="width: 100%; margin-right: 10px">Hello</textarea>
+        <form id="note-form">
+          <h4>Add a note...</h4>
+          <textarea id="note-input" style="width: 100%; margin-right: 10px" placeholder="Type here..."></textarea>
+          <button id="submit-button" type="submit" value="sumbit">Submit</button>
+        </form>
+        <h3 id="notes-header" style="padding: 10px">Saved notes</h3>
+        <ul id="saved-notes"></ul>
       </section>
     </main>
     <script
