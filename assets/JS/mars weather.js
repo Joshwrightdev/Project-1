@@ -109,6 +109,7 @@ noteFormEl.on("submit", function(event) {
 function getList() {
 
     if (localStorage.getItem("notesArray")) {
+        notesArray = JSON.parse(localStorage.getItem("notesArray"));
         // notesArray.empty()
         
         for (i=0; i < notesArray.length; i++) {
@@ -122,6 +123,5 @@ function getList() {
     console.log(savedNotesEl)
 }
 
-notesArray = JSON.parse(localStorage.getItem("notesArray"));
 
 
