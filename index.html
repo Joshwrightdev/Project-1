@@ -22,6 +22,8 @@
           of its parent.
         </p>
       </div>
+
+
     </div>
     <main class="d-flex flex-row">
       <section id="weather-container" class="col-8">
@@ -31,7 +33,7 @@
             class="card text-white bg-dark"
             style="margin-right: 10px; margin-bottom: 10px"
           >
-            <h3 class="card-header">Mars Weather</h3>
+            <h3 class="card-header">Mars Weather<span id="current-sol"></span></h3>
             <div id="mars-card-text" class="card-body"></div>
           </div>
           <!-- earth natural events -->
@@ -91,6 +93,7 @@
       integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
       crossorigin="anonymous"
     ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.20.1/moment.min.js"></script>
     <script src="./assets/JS/earthevents.js"></script>
     <script src="./assets/JS/launch.js"></script>
     <script src="./assets/JS/mars weather.js"></script>
