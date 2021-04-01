@@ -10,3 +10,8 @@
     background-color: navy;
     color: white
 }
+
+.temp-text-small {
+    font-size: 11px;
+    color: red
+}
