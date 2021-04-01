@@ -22,6 +22,8 @@
           of its parent.
         </p>
       </div>
+
+
     </div>
     <main class="d-flex flex-row">
       <section id="weather-container" class="col-8">
@@ -31,31 +33,28 @@
             class="card text-white bg-dark"
             style="margin-right: 10px; margin-bottom: 10px"
           >
-            <h3 class="card-header">Mars Weather</h3>
+            <h3 class="card-header">Mars Weather<span id="current-sol"></span></h3>
             <div id="mars-card-text" class="card-body"></div>
           </div>
-        </div>
-        <!-- earth natural events -->
-        <div
-          id="space-events"
-          class="card text-white bg-dark"
-          style="margin-bottom: 10px; margin-left: 5px"
-        ></div>
-
-        <!-- inner container 2 -->
+          <!-- space events -->
+          <div id="space-events" class="card text-white bg-dark" style="margin-bottom: 10px; margin-left: 5px">
+          </div> 
+          
+          <!-- inner container 2 -->
         <div id="second-container" class="m-0">
           <div class="card text-white bg-dark w-100 p-3" id="mars-photo">
             <div style="margin: 6px">
               <h3 class="card-title row">Mars Rover Photo</h3>
               <div class="box-container d-flex flex-row">
-                <div class="img-container">
-                  <img
-                    src="#"
-                    class="card-img-top img-fluid p-0 rover-img"
-                    alt="daily rover image"
-                    style="margin-bottom: 10px"
-                  />
-                </div>
+              <div class="img-container">
+                <img src="#" class="card-img-top img-fluid p-0 rover-img" alt="daily rover image" style="margin-bottom: 10px;"/>
+              </div>
+
+              <div class ="info-container">
+                <ul class="rover-info">
+                </ul>
+            </div>
+          </div>
 
                 <div class="info-container">
                   <ul class="rover-info">
@@ -116,7 +115,9 @@
       integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
       crossorigin="anonymous"
     ></script>
-    <script src="./assets/JS/earthevents.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.20.1/moment.min.js"></script>
+    <script src="./assets/JS/spaceevents.js"></script>
     <script src="./assets/JS/launch.js"></script>
     <script src="./assets/JS/mars weather.js"></script>
     <script src="./assets/JS/rover.js"></script>
