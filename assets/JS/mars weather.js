@@ -93,10 +93,11 @@ var notesArray = []
 noteFormEl.on("submit", function(event) {
 
     event.preventDefault();
-    var noteInput = noteInputEl.val()
-
-    notesArray.push(noteInput)
-
+    var noteInput = noteInputEl.val();
+    console.log(noteInput);
+    notesArray.push(noteInput);
+    console.log(notesArray)
+    localStorage.clear();
     localStorage.setItem("notesArray",JSON.stringify(notesArray))
 
 
@@ -111,17 +112,18 @@ function getList() {
     if (localStorage.getItem("notesArray")) {
         notesArray = JSON.parse(localStorage.getItem("notesArray"));
         // notesArray.empty()
-        
+      console.log(notesArray)
         for (i=0; i < notesArray.length; i++) {
+            console.log(notesArray.length)
             var savedNotesP = $("<ul>")
             notesLi = $("<li>").text(notesArray[i])
             savedNotesP.append(notesLi)
-            
+            savedNotesEl.append(savedNotesP)
         }
     }
-    savedNotesEl.append(savedNotesP)
     console.log(savedNotesEl)
 }
 
+getList();
 
 
