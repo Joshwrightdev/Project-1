@@ -55,14 +55,16 @@ li{
 }
 
 .mars-image {
+
   width: 100%;
   margin-bottom: 20px;
+  border-radius: 25px;
+    width: 100%;
+    margin-bottom: 20px
 }
 
 #saved-notes {
     border: black;
-}
-
 }
 
 #space-events {
@@ -83,9 +85,19 @@ li{
   font-weight: normal
 }
 .event-img {
+  border-radius: 25px;
   width: 70%;
   height: auto;
   display: flex;
   justify-content: space-evenly;
 }
 
+#note-input {
+  margin-top: 10px;
+  margin-bottom: 10px
+}
+
+
+.launch-info-card{
+  width: 97%;
+}

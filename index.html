@@ -33,27 +33,27 @@
         <div class="card-group m-3">
           <div
             class="card text-white bg-dark"
-            style="margin-right: 10px; margin-bottom: 10px"
+            style="margin-right: 10px; margin-bottom: 10px; border-radius: 25px;"
           >
             <h3 class="card-header">Mars Weather: <span id="current-sol"></span></h3>
             <div id="mars-card-text" class="card-body"></div>
               <p class="mars-card-data">Current Season: <span id="season-value"></span></p>
-              <p class="mars-card-data">Average Atomspheric Pressure: <span id="pressure-value"></span></p>
+              <p class="mars-card-data">Average Atmospheric Pressure: <span id="pressure-value"></span></p>
               <p class="mars-card-data">Average Temperature: <span id="temp-value"></span></p>
-              <p class="mars-card-data">Average Horizonal Winds: <span id="wind-value"></span></p>
+              <p class="mars-card-data">Average Horizontal Winds: <span id="wind-value"></span></p>
           </div>
           <!-- space events -->
-          <div id="space-events" class="card text-white bg-dark" style="margin-bottom: 10px; margin-left: 5px">
+          <div id="space-events" class="card text-white bg-dark" style="margin-bottom: 10px; margin-left: 5px; border-radius: 25px;">
           </div> 
           
           <!-- inner container 2 -->
         <div id="second-container" class="m-0">
-          <div class="card text-white bg-dark w-100 p-3 rounded-5" id="mars-photo">
+          <div class="card text-white bg-dark w-100 p-3 rounded-5" id="mars-photo" style="border-radius: 25px;">
             <div style="margin: 6px">
               <h3 class="card-title row">Mars Rover Photo</h3>
               <div class="box-container d-flex flex-row">
               <div class="img-container">
-                <img src="#" class="card-img-top img-fluid p-0 rover-img" alt="daily rover image" style="margin-bottom: 10px;"/>
+                <img src="#" class="card-img-top img-fluid p-0 rover-img" alt="daily rover image" style="margin-bottom: 10px; border-radius: 25px;"/>
               </div>
 
               <div class ="info-container">
@@ -73,12 +73,12 @@
               </div>
             </div>
           </div>
-          <div id="third-container">
+          <div id="third-container" style="margin-left: 15px" class="launch-info-card">
             <!-- launch info -->
             <div
               class="card text-white bg-dark mb-3 rounded-5"
               id="launch-info"
-              style="margin-top: 10px"
+              style="margin-top: 10px; border-radius: 25px;"
             >
               <div class="card-header">Launch Info</div>
               <div class="card-body">
@@ -92,12 +92,14 @@
                       src="http://placehold.jp/1200x800.png"
                       alt=""
                       width="45%"
+                      style="border-radius: 25px;"
                     />
                     <img
                       id="map-image"
                       src="http://placehold.jp/1200x800.png"
                       alt=""
                       width="45%"
+                      style="border-radius: 25px;"
                     />
 
                     <figcaption id="flight-caption"></figcaption>
@@ -115,9 +117,9 @@
         <form id="note-form">
           <h4>Add a note...</h4>
           <textarea id="note-input" style="width: 100%; margin-right: 10px" placeholder="Type here..."></textarea>
-          <button class="btn btn-light" id="submit-button" type="submit" value="sumbit">Submit</button>
+          <button class="btn btn-light" id="submit-button" type="submit" value="submit">Submit</button>
         </form>
-        <h3 id="notes-header" style="padding: 10px">Saved notes</h3>
+        <h3 id="notes-header" style="padding: 5px">Saved notes</h3>
         <ul id="saved-notes"></ul>
       </section>
     </main>
