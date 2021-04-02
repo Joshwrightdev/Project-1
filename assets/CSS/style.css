@@ -63,8 +63,6 @@ li{
     border: black;
 }
 
-}
-
 #space-events {
   padding: 16px;
 
@@ -89,3 +87,7 @@ li{
   justify-content: space-evenly;
 }
 
+#note-input {
+  margin-top: 10px;
+  margin-bottom: 10px
+}
