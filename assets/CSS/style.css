@@ -16,6 +16,10 @@ font-weight: 400;
 font-style: normal;
 }
 
+.carousel-item img {
+  width: 30vw;
+  height: 60vh;
+}
 
 li{
   color: white;
@@ -41,9 +45,9 @@ li{
   position: relative;
 }
 
-.rover-info {
+.info-container {
   position: relative;
-  width: 300px;
+  margin: 20px;
 }
 
 .rover-info li {
