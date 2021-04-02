@@ -1,7 +1,7 @@
 var spaceEventsContainer = $('#space-events');
 
 function getSpaceEvent() {
-    var spaceEventsURL = "https://ll.thespacedevs.com/2.0.0/event/upcoming/";
+    var spaceEventsURL = "https://lldev.thespacedevs.com/2.0.0/event/upcoming/";
 
     fetch(spaceEventsURL, {
         key: "Authorization",
