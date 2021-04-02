@@ -16,6 +16,10 @@ font-weight: 400;
 font-style: normal;
 }
 
+.carousel-item img {
+  width: 35vw;
+  height: 65vh;
+}
 
 li{
   color: white;
@@ -41,24 +45,20 @@ li{
   position: relative;
 }
 
-.rover-info {
+.info-container {
   position: relative;
-  width: 300px;
+  margin: 20px;
 }
 
 .rover-info li {
-  padding: 20px;
+    padding: 20px;
 }
 
 .mars-intro {
-  font-size: 12px;
+    font-size: 12px
 }
 
 .mars-image {
-
-  width: 100%;
-  margin-bottom: 20px;
-  border-radius: 25px;
     width: 100%;
     margin-bottom: 20px
 }
@@ -85,7 +85,6 @@ li{
   font-weight: normal
 }
 .event-img {
-  border-radius: 25px;
   width: 70%;
   height: auto;
   display: flex;

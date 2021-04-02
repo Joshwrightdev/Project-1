@@ -10,10 +10,10 @@
       integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6"
       crossorigin="anonymous"
     />
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-<link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=Space+Mono&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://use.typekit.net/mxx4wqr.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" />
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://use.typekit.net/mxx4wqr.css" />
 
 
     <link rel="stylesheet" href="assets/CSS/style.css" />
@@ -29,11 +29,11 @@
     </div>
     <main class="d-flex flex-row">
       <section id="weather-container" class="col-8">
-        <!-- inner container 1 -->
+        <!-- Mars Weather -->
         <div class="card-group m-3">
           <div
             class="card text-white bg-dark"
-            style="margin-right: 10px; margin-bottom: 10px; border-radius: 25px;"
+            style="margin-right: 10px; margin-bottom: 10px"
           >
             <h3 class="card-header">Mars Weather: <span id="current-sol"></span></h3>
             <div id="mars-card-text" class="card-body"></div>
@@ -42,43 +42,55 @@
               <p class="mars-card-data">Average Temperature: <span id="temp-value"></span></p>
               <p class="mars-card-data">Average Horizontal Winds: <span id="wind-value"></span></p>
           </div>
-          <!-- space events -->
-          <div id="space-events" class="card text-white bg-dark" style="margin-bottom: 10px; margin-left: 5px; border-radius: 25px;">
+          <!-- Space Events -->
+          <div id="space-events" class="card text-white bg-dark" style="margin-bottom: 10px; margin-left: 5px">
           </div> 
           
-          <!-- inner container 2 -->
+          <!--Mars Rover Images -->
         <div id="second-container" class="m-0">
-          <div class="card text-white bg-dark w-100 p-3 rounded-5" id="mars-photo" style="border-radius: 25px;">
+          <div class="card text-white bg-dark w-100 p-3 rounded-5" id="mars-photo">
             <div style="margin: 6px">
-              <h3 class="card-title row">Mars Rover Photo</h3>
+              <h3 class="card-title row">Mars Rover Photos</h3>
               <div class="box-container d-flex flex-row">
               <div class="img-container">
-                <img src="#" class="card-img-top img-fluid p-0 rover-img" alt="daily rover image" style="margin-bottom: 10px; border-radius: 25px;"/>
+                <div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel">
+                  <div class="carousel-inner">
+                    <div class="carousel-item active">
+                      <img src="" class="d-block w-100 card-img-top img-fluid per-rover-img" alt="perseverance mars rover image">
+                    </div>
+                    <div class="carousel-item">
+                      <img src="" class="d-block w-100 cur-rover-img" alt="curiosity mars rover image">
+                    </div>
+                  </div>
+                  <a class="carousel-control-prev" href="#carouselExampleFade" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only"></span>
+                  </a> 
+                  <a class="carousel-control-next" href="#carouselExampleFade" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only"></span>
+                  </a>
+                </div>
               </div>
-
               <div class ="info-container">
                 <ul class="rover-info">
                 </ul>
+                <p>Click <a href="https://mars.nasa.gov/mars2020/multimedia/raw-images/">here</a> to see more raw images from Perseverance!</p>
             </div>
-          </div>
+              </div>
 
-                <!-- <div class="info-container">
-                  <ul class="rover-info">
-                    <li class="roverName">Rover Name</li>
-                    <li class="earthDate">Earth Date</li>
-                    <li class="launchDate">Launch Date</li>
-                    <li class="landingDate">Landing Date</li>
-                  </ul> -->
+              
+          </div>
                 </div>
               </div>
             </div>
           </div>
           <div id="third-container" style="margin-left: 15px" class="launch-info-card">
-            <!-- launch info -->
+            <!-- Launch Info -->
             <div
               class="card text-white bg-dark mb-3 rounded-5"
               id="launch-info"
-              style="margin-top: 10px; border-radius: 25px;"
+              style="margin-top: 10px"
             >
               <div class="card-header">Launch Info</div>
               <div class="card-body">
@@ -92,14 +104,12 @@
                       src="http://placehold.jp/1200x800.png"
                       alt=""
                       width="45%"
-                      style="border-radius: 25px;"
                     />
                     <img
                       id="map-image"
                       src="http://placehold.jp/1200x800.png"
                       alt=""
                       width="45%"
-                      style="border-radius: 25px;"
                     />
 
                     <figcaption id="flight-caption"></figcaption>
@@ -110,6 +120,7 @@
           </div>
         </div>
       </section>
+      <!-- Notepad -->
       <section
         id="notepad-container"
         style="margin-top: 16px; width: 100%; margin-right: 10px"
@@ -128,6 +139,8 @@
       integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
       crossorigin="anonymous"
     ></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js" integrity="sha384-SR1sx49pcuLnqZUnnPwx6FCym0wLsk5JZuNx2bPPENzswTNFaQU1RDvt3wT4gWFG" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.min.js" integrity="sha384-j0CNLUeiqtyaRmlzUHCPZ+Gy5fQu0dQ6eZ/xAww941Ai1SxSY+0EQqNXNE6DZiVc" crossorigin="anonymous"></script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.20.1/moment.min.js"></script>
     <script src="./assets/JS/spaceevents.js"></script>
