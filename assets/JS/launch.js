@@ -8,7 +8,7 @@ const flightCaption = document.getElementById("flight-caption")
 
 
 function getFlightInfo() {
-  var launchEventUrl = "https://ll.thespacedevs.com/2.0.0/launch/upcoming/" ;
+  var launchEventUrl = "https://lldev.thespacedevs.com/2.0.0/launch/upcoming/" ;
   fetch(launchEventUrl, {
     key: "Authorization",
     value: "Token 30e8842577e5f6666308813bfefb7be8a7b38f40",
