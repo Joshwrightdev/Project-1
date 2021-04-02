@@ -3,7 +3,10 @@ var spaceEventsContainer = $('#space-events');
 function getSpaceEvent() {
     var spaceEventsURL = "https://lldev.thespacedevs.com/2.0.0/event/upcoming/";
 
-    fetch(spaceEventsURL)
+    fetch(spaceEventsURL, {
+        key: "Authorization",
+        value: "Token 30e8842577e5f6666308813bfefb7be8a7b38f40",
+    })
         .then(function (response) {
             return response.json();
         })
