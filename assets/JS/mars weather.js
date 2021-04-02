@@ -26,53 +26,54 @@ marsCardText.append(marsCardImage)
 function getApi(requestUrl) {
     fetch(requestUrl)
         .then(function (response) {
-            return response.json() })
+            return response.json()
+        })
 
-            .then(function (data) {
-                currentSol = data.sol_keys[2]
-                marsCurrentSolEl.text("Sol "+currentSol)
+        .then(function (data) {
+            currentSol = data.sol_keys[2]
+            marsCurrentSolEl.text("Sol " + currentSol)
 
-                var seasonArray = data[currentSol]
-                var currentSeason= seasonArray.Season
+            var seasonArray = data[currentSol]
+            var currentSeason = seasonArray.Season
 
-                var seasonEl = $("<p>")
-                seasonEl.text("Current Season: "+currentSeason)
-                marsCardText.append(seasonEl)
+            var seasonEl = $("<p>")
+            seasonEl.text("Current Season: " + currentSeason)
+            marsCardText.append(seasonEl)
 
-                dataArray = data[currentSol]
+            dataArray = data[currentSol]
 
-                // CHECKING FOR DATA--NEED TO DO THIS FOR PRESSURE AS WELL
+            // CHECKING FOR DATA--NEED TO DO THIS FOR PRESSURE AS WELL
 
-                if (dataArray.PRE) {
-                    avAtmosphericPressure= dataArray.PRE.av
-                }
-                
-                if (dataArray.AT) {
-                    avTemperature = dataArray.AT.av
-                } else {
-                    avTemperature = "NO DATA"
-                }
+            if (dataArray.PRE) {
+                avAtmosphericPressure = dataArray.PRE.av
+            }
 
-                if (dataArray.HWS) {
-                    avWinds = dataArray.HWS.av
-                } else {
-                    avWinds = "NO DATA"
-                }
+            if (dataArray.AT) {
+                avTemperature = dataArray.AT.av
+            } else {
+                avTemperature = "NO DATA"
+            }
 
-                var pressureEl = $("<p>")
-                pressureEl.text("Atmospheric Pressure on Sol " + currentSol + ": "+avAtmosphericPressure)
-                marsCardText.append(pressureEl)
+            if (dataArray.HWS) {
+                avWinds = dataArray.HWS.av
+            } else {
+                avWinds = "NO DATA"
+            }
 
-                var tempEl = $("<p>")
-                tempEl.text("Average Temperature: " + avTemperature)
-                marsCardText.append(tempEl)
+            var pressureEl = $("<p>")
+            pressureEl.text("Atmospheric Pressure on Sol " + currentSol + ": " + avAtmosphericPressure)
+            marsCardText.append(pressureEl)
 
-                var windsEl = $("<p>")
-                windsEl.text("Average Horizontal Winds: " + avWinds)
-                marsCardText.append(windsEl)
+            var tempEl = $("<p>")
+            tempEl.text("Average Temperature: " + avTemperature)
+            marsCardText.append(tempEl)
 
-            })
-                      
+            var windsEl = $("<p>")
+            windsEl.text("Average Horizontal Winds: " + avWinds)
+            marsCardText.append(windsEl)
+
+        })
+
 }
 
 getApi(requestUrl)
@@ -90,15 +91,12 @@ var notesArray = []
 // adds user input to an array called notesArray and sets it to local storage.
 // it also runs the function get list
 
-noteFormEl.on("submit", function(event) {
-
+noteFormEl.on("submit", function (event) {
+    notesArray = JSON.parse(localStorage.getItem("notesArray")) || [];
     event.preventDefault();
     var noteInput = noteInputEl.val();
-    console.log(noteInput);
     notesArray.push(noteInput);
-    console.log(notesArray)
-    localStorage.clear();
-    localStorage.setItem("notesArray",JSON.stringify(notesArray))
+    localStorage.setItem("notesArray", JSON.stringify(notesArray))
 
 
     getList()
@@ -110,18 +108,15 @@ noteFormEl.on("submit", function(event) {
 function getList() {
 
     if (localStorage.getItem("notesArray")) {
-        notesArray = JSON.parse(localStorage.getItem("notesArray"));
-        // notesArray.empty()
-      console.log(notesArray)
-        for (i=0; i < notesArray.length; i++) {
-            console.log(notesArray.length)
+        notesArray = JSON.parse(localStorage.getItem("notesArray")) || [];
+        savedNotesEl.empty();
+        for (i = 0; i < notesArray.length; i++) {
             var savedNotesP = $("<ul>")
             notesLi = $("<li>").text(notesArray[i])
             savedNotesP.append(notesLi)
             savedNotesEl.append(savedNotesP)
         }
     }
-    console.log(savedNotesEl)
 }
 
 getList();
