@@ -55,6 +55,7 @@ li{
 }
 
 .mars-image {
+  border-radius: 25px;
     width: 100%;
     margin-bottom: 20px
 }
@@ -81,6 +82,7 @@ li{
   font-weight: normal
 }
 .event-img {
+  border-radius: 25px;
   width: 70%;
   height: auto;
   display: flex;
