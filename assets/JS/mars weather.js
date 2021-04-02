@@ -1,6 +1,10 @@
 // DOM VARIABLES
 marsCardText = $("#mars-card-text")
 marsCurrentSolEl = $("#current-sol")
+pressureValEl = $("#pressure-value")
+tempValEl = $("#temp-value")
+windValEl = $("#wind-value")
+seasonValEl = $("#season-value")
 
 // FETCHING MARS WEATHER DATA
 
@@ -13,7 +17,7 @@ requestUrl = "https://api.nasa.gov/insight_weather/?api_key=EgPBPuCRfLxgIGWykQFE
 // currentSol = ""
 
 marsCardIntro = $("<p>")
-marsCardIntro.text("This data was collected from Elysium Planetia, a flatt smooth plain near Mars' equator. The 'sol' number represents one solar day out of a Martian year. This data is not representative of all weather on Mars.")
+marsCardIntro.text("This data was collected from Elysium Planetia, a flat smooth plain near Mars' equator. The 'sol' number represents one solar day out of a Martian year. This data is not representative of all weather on Mars.")
 marsCardIntro.addClass("mars-intro")
 
 marsCardImage = $("<img>")
@@ -36,41 +40,54 @@ function getApi(requestUrl) {
             var seasonArray = data[currentSol]
             var currentSeason = seasonArray.Season
 
-            var seasonEl = $("<p>")
-            seasonEl.text("Current Season: " + currentSeason)
-            marsCardText.append(seasonEl)
-
             dataArray = data[currentSol]
 
             // CHECKING FOR DATA--NEED TO DO THIS FOR PRESSURE AS WELL
+            if (seasonArray.Season) {
+                currentSeason = seasonArray.Season
+                seasonValEl.addClass("mars-data")
+                seasonValEl.append(currentSeason)
+                
+            }
 
             if (dataArray.PRE) {
                 avAtmosphericPressure = dataArray.PRE.av
+                pressureValEl.addClass("mars-data")
+                pressureValEl.append(avAtmosphericPressure)
+            } else {
+                pressureValEl.addClass("no-data")
+                pressureValEl.text("NO DATA")
             }
 
             if (dataArray.AT) {
                 avTemperature = dataArray.AT.av
+                tempValEl.addClass("mars-data")
+                tempValEl.append(avTemperature)
             } else {
-                avTemperature = "NO DATA"
+                tempValEl.addClass("no-data")
+                tempValEl.text("NO DATA")
             }
 
             if (dataArray.HWS) {
                 avWinds = dataArray.HWS.av
+                windValEl.addClass("mars-data")
+                windValEl.append(avWinds)
             } else {
-                avWinds = "NO DATA"
+                windValEl.addClass("no-data")
+                windValEl.text("NO DATA")
             }
 
-            var pressureEl = $("<p>")
-            pressureEl.text("Atmospheric Pressure on Sol " + currentSol + ": " + avAtmosphericPressure)
-            marsCardText.append(pressureEl)
+            // var pressureEl = $("<p>")
+            // pressureEl.text("Atmospheric Pressure on Sol " + currentSol + ": " +avAtmosphericPressure)
+            // marsCardText.append(pressureEl)
 
-            var tempEl = $("<p>")
-            tempEl.text("Average Temperature: " + avTemperature)
-            marsCardText.append(tempEl)
+            // var tempEl = $("<p>")
+            // tempEl.text("Average Temperature: " + avTemperature)
+            // marsCardText.append(tempEl)
 
-            var windsEl = $("<p>")
-            windsEl.text("Average Horizontal Winds: " + avWinds)
-            marsCardText.append(windsEl)
+            // var windsEl = $("<p>")
+            // windsEl.text("Average Horizontal Winds: " + avWinds)
+            // marsCardText.append(windsEl)
 
         })
 

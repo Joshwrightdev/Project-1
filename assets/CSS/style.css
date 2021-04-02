@@ -22,11 +22,6 @@
   width: 300px;
 }
 
-.temp-text-small {
-  font-size: 11px;
-  color: red;
-}
-
 .rover-info li {
     padding: 20px;
 }
@@ -42,6 +37,7 @@
 
 #saved-notes {
     border: black;
+}
 
 .event-img {
   width: 70%;
@@ -54,3 +50,18 @@
   padding: 16px;
 
 }
+
+.mars-card-data {
+  font-weight: bolder;
+  margin-left: 5%;
+}
+
+.mars-data {
+  font-weight: normal
+}
+
+.no-data {
+  color: red;
+  font-weight: normal
+}
+
