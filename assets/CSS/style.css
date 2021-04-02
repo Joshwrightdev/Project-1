@@ -87,3 +87,7 @@ li{
   justify-content: space-evenly;
 }
 
+#note-input {
+  margin-top: 10px;
+  margin-bottom: 10px
+}
