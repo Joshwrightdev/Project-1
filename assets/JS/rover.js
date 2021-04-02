@@ -3,39 +3,102 @@ var apiKey = "EgPBPuCRfLxgIGWykQFEfYbnf48yDhmbDXqAuMAW";
 var queryURL =
   "https://api.nasa.gov/mars-photos/api/v1/rovers/perseverance/latest_photos?api_key=" +
   apiKey;
-var roverImageEl = $(".rover-img");
+var curQueryURL =
+  "https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=1000&camera=fhaz&api_key=" +
+  apiKey;
+var roverImageEl = $(".per-rover-img");
+var curiosityImageEl = $(".cur-rover-img");
 var roverInfoEl = $(".rover-info");
-// var roverNameEl = $(".roverName");
-// var launchDateEl = $(".launchDate");
-// var landingDateEl = $(".landingDate");
-// var earthDateEl = $(".earthDate");
-
+const carousel = $("#carouselExampleFade");
+const carouselItem = $(".carousel-item img");
+const actualItem = $(".carousel-item");
+//flag to show which image we're on
+let state = true;
 fetch(queryURL)
   .then(function (response) {
     return response.json();
   })
   .then(function (data) {
     console.log(data);
-    $(roverImageEl).attr("src", data.latest_photos[1].img_src);
+    $(carouselItem[0]).attr("src", data.latest_photos[1].img_src);
+    let rover = data.latest_photos[1];
+    let landingEl = createRoverText(rover);
 
-    var roverName = data.latest_photos[1].rover.name;
-    var earthDate = data.latest_photos[1].earth_date;
-    var launchDate = data.latest_photos[1].rover.launch_date;
-    var landingDate = data.latest_photos[1].rover.landing_date;
+    roverInfoEl.append(landingEl);
 
-    var roverNameEl = $("<li>");
-    roverNameEl.text("Rover Name: " + roverName);
-    roverInfoEl.append(roverNameEl);
+    fetch(curQueryURL)
+      .then(function (response) {
+        return response.json();
+      })
+      .then(function (data) {
+        console.log(data);
+        let landingEl2 = createRoverText(data.photos[0]);
 
-    var earthDateEl = $("<li>");
-    earthDateEl.text("Earth Date: " + earthDate);
-    roverInfoEl.append(earthDateEl);
+        roverInfoEl.append(landingEl2);
+        landingEl2.attr("style", "display: none");
 
-    var launchDateEl = $("<li>");
-    launchDateEl.text("Launch Date: " + launchDate);
-    roverInfoEl.append(launchDateEl);
+        $(carouselItem[1]).attr("src", data.photos[0].img_src);
+        $(".carousel-control-next").on("click", function () {
+          console.log("im so done");
+          if (state) {
+            $(actualItem[0]).removeClass("active");
+            $(actualItem[1]).addClass("active");
+            landingEl2.attr("style", "display: block");
+            landingEl.attr("style", "display: none");
+            state = !state;
+          } else {
+            state = !state;
+            $(actualItem[1]).removeClass("active");
+            $(actualItem[0]).addClass("active");
+            landingEl.attr("style", "display: block");
+            landingEl2.attr("style", "display: none");
+          }
+        });
 
-    var landingDateEl = $("<li>");
-    landingDateEl.text("Landing Date: " + landingDate);
-    roverInfoEl.append(landingDateEl);
+        $(".carousel-control-prev").on("click", function () {
+          if (state) {
+            state = !state;
+            $(actualItem[0]).removeClass("active");
+            $(actualItem[1]).addClass("active");
+            landingEl2.attr("style", "display: block");
+            landingEl.attr("style", "display: none");
+          } else {
+            state = !state;
+            $(actualItem[1]).removeClass("active");
+            $(actualItem[0]).addClass("active");
+            landingEl.attr("style", "display: block");
+            landingEl2.attr("style", "display: none");
+          }
+        });
+      });
   });
+
+function createRoverText(rover) {
+  var wrapper = $("<div>");
+  wrapper.addClass("rover-wrapper");
+  var roverName = rover.rover.name;
+  var earthDate = rover.earth_date;
+  var launchDate = rover.rover.launch_date;
+  var landingDate = rover.rover.landing_date;
+
+  var roverNameEl = $("<li>");
+  roverNameEl.text("Rover Name: " + roverName);
+  roverInfoEl.append(roverNameEl);
+
+  var earthDateEl = $("<li>");
+  earthDateEl.text("Earth Date: " + earthDate);
+  roverInfoEl.append(earthDateEl);
+
+  var launchDateEl = $("<li>");
+  launchDateEl.text("Launch Date: " + launchDate);
+  roverInfoEl.append(launchDateEl);
+
+  var landingDateEl = $("<li>");
+  landingDateEl.text("Landing Date: " + landingDate);
+
+  wrapper.append(roverNameEl);
+  wrapper.append(earthDateEl);
+  wrapper.append(launchDateEl);
+  wrapper.append(landingDateEl);
+  return wrapper;
+}
