@@ -10,17 +10,20 @@
       integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6"
       crossorigin="anonymous"
     />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.typekit.net/mxx4wqr.css">
+
+
     <link rel="stylesheet" href="assets/CSS/style.css" />
     <title>Space Dashboard</title>
   </head>
-  <body>
+  <body class="background-color">
     <div class="jumbotron jumbotron-fluid jumbotron-custom">
       <div class="container">
-        <h1 class="display-4">Weather Dash</h1>
-        <p class="lead">
-          This is a modified jumbotron that occupies the entire horizontal space
-          of its parent.
-        </p>
+        <h1 class="display-4">Space Dashboard</h1>
+    
       </div>
 
     </div>
@@ -45,7 +48,7 @@
           
           <!-- inner container 2 -->
         <div id="second-container" class="m-0">
-          <div class="card text-white bg-dark w-100 p-3" id="mars-photo">
+          <div class="card text-white bg-dark w-100 p-3 rounded-5" id="mars-photo">
             <div style="margin: 6px">
               <h3 class="card-title row">Mars Rover Photo</h3>
               <div class="box-container d-flex flex-row">
@@ -59,13 +62,13 @@
             </div>
           </div>
 
-                <div class="info-container">
+                <!-- <div class="info-container">
                   <ul class="rover-info">
                     <li class="roverName">Rover Name</li>
                     <li class="earthDate">Earth Date</li>
                     <li class="launchDate">Launch Date</li>
                     <li class="landingDate">Landing Date</li>
-                  </ul>
+                  </ul> -->
                 </div>
               </div>
             </div>
@@ -73,7 +76,7 @@
           <div id="third-container">
             <!-- launch info -->
             <div
-              class="card text-white bg-dark mb-3"
+              class="card text-white bg-dark mb-3 rounded-5"
               id="launch-info"
               style="margin-top: 10px"
             >
@@ -88,13 +91,13 @@
                       id="flight-image"
                       src="http://placehold.jp/1200x800.png"
                       alt=""
-                      width="50%"
+                      width="45%"
                     />
                     <img
                       id="map-image"
                       src="http://placehold.jp/1200x800.png"
                       alt=""
-                      width="50%"
+                      width="45%"
                     />
 
                     <figcaption id="flight-caption"></figcaption>
@@ -112,7 +115,7 @@
         <form id="note-form">
           <h4>Add a note...</h4>
           <textarea id="note-input" style="width: 100%; margin-right: 10px" placeholder="Type here..."></textarea>
-          <button id="submit-button" type="submit" value="sumbit">Submit</button>
+          <button class="btn btn-light" id="submit-button" type="submit" value="sumbit">Submit</button>
         </form>
         <h3 id="notes-header" style="padding: 10px">Saved notes</h3>
         <ul id="saved-notes"></ul>
