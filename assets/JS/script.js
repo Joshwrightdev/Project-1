@@ -135,6 +135,7 @@ getApi(requestUrl)
 var noteFormEl = $("#note-form")
 var noteInputEl = $("#note-input")
 var savedNotesEl = $("#saved-notes")
+var clearButtonEl = $("#clear-button")
 
 
 var notesArray = []
@@ -148,10 +149,16 @@ noteFormEl.on("submit", function (event) {
     var noteInput = noteInputEl.val();
     notesArray.push(noteInput);
     localStorage.setItem("notesArray", JSON.stringify(notesArray))
-
+    noteInputEl.val('');
 
     getList()
 
+})
+
+clearButtonEl.click(function (event) {
+  event.preventDefault();
+  localStorage.removeItem("notesArray");
+  getList()
 })
 
 // get list gets the value of notesArray from storage, iterates through the list, 
@@ -167,6 +174,8 @@ function getList() {
             savedNotesP.append(notesLi)
             savedNotesEl.append(savedNotesP)
         }
+    } else {
+      savedNotesEl.empty();
     }
 }
 
